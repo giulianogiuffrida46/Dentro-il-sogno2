@@ -1,0 +1,1909 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Lato', sans-serif;
+  background: #0B163D;
+  color: #fff;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* 🌙 NAVBAR */
+.navbar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(11,22,61,0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.navbar .logo img { height: 28px; width: auto; }
+.navbar ul { display: flex; list-style: none; gap: 30px; }
+.navbar a { color: white; text-decoration: none; font-size: 1rem; transition: color .3s; }
+.navbar a:hover { color: #FFC857; }
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: #0B163D;
+    overflow: hidden;
+  }
+  
+  /* ✅ Testo */
+  .hero-content {
+    max-width: 40%;
+    z-index: 5;
+  }
+  .hero-content h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: #FFC857;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-content p {
+    font-size: 1.3rem;
+    color: #fff;
+    opacity: 0.9;
+  }
+  
+  /* ⭐ Stella grande */
+  .stella-inline {
+    width: 80px;
+    animation: stellaGlow 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 12px rgba(255,200,87,1));
+  }
+  @keyframes stellaGlow {
+    0%,100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(255,200,87,0.8)); }
+    50% { transform: scale(1.3); filter: drop-shadow(0 0 25px rgba(255,200,87,1)); }
+  }
+  
+  /* 👁 Occhio più vicino al testo */
+  .occhio-hero {
+    position: absolute;
+    width: 200px;
+    right: 40%;
+    top: 60%;
+    z-index: 4;
+    animation: fluttuazione 6s infinite ease-in-out;
+  }
+  
+  /* ☀️ Sole più in alto */
+  .sole-bg {
+    position: absolute;
+    width: 180px;
+    top: 15%;
+    right: 35%;
+    opacity: 0.5;
+    z-index: 2;
+    animation: soleGlow 10s infinite ease-in-out;
+  }
+  
+  /* ☀️ Raggi allineati con il sole */
+  .raggi-bg {
+    position: absolute;
+    width: 260px;
+    top: 25%;
+    right: 7%;
+    opacity: 0.3;
+    z-index: 1;
+    animation: raggiPulse 10s infinite ease-in-out, rotazione 40s infinite linear;
+  }
+  
+  /* 🌀 Spirale soft */
+  .spirale-bg {
+    position: absolute;
+    width: 350px;
+    top: 15%;
+    left: -120px;
+    opacity: 0.3;
+    z-index: 0;
+    animation: spiraleMove 20s infinite ease-in-out;
+  }
+  
+  /* ✨ Animazioni */
+  @keyframes fluttuazione {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes spiraleMove {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes soleGlow {
+    0%,100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+  }
+  @keyframes raggiPulse {
+    0%,100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+  }
+  @keyframes rotazione {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
+  
+
+/* 📝 INTRO */
+.intro { padding: 80px 10%; }
+.intro h2 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  color: #FFC857;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.intro p { max-width: 700px; }
+
+/* 🃏 CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 50px 10% 80px;
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform .3s ease, box-shadow .3s ease;
+  min-height: 420px;
+}
+.card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-content { padding: 20px; }
+.card-content h3 {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  color: #FFC857;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.card-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #FFC857;
+  color: #FFC857;
+  text-decoration: none;
+  transition: background .3s, color .3s;
+}
+.btn:hover { background: #FFC857; color: #0B163D; }
+
+/* ⚡ FOOTER */
+.footer {
+  background: #0B163D;
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer .copyright {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-content { margin-bottom: 50px; }
+  .occhio-hero { width: 180px; }
+  .spirale-bg { width: 300px; }
+  .raggi-bg { width: 200px; }
+  .sole-bg { width: 180px; }
+  .stella-inline { width: 35px; }
+  .footer .footer-links { gap: 40px; flex-direction: column; }
+}
+
+/* ──────────────────────────────
+   🌌 SEZIONE ORIGINI (aggiornata)
+────────────────────────────── */
+
+/* ✅ Hero introduttiva con decorazioni */
+.hero-origini {
+    position: relative;
+    padding: 12% 10% 7%;
+    background: #0B163D;
+    color: white;
+    text-align: left;
+    overflow: hidden;
+  }
+  .hero-origini h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #FFC857;
+    margin-bottom: 10px;
+  }
+  .hero-origini p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* 🌟 Decorazioni aggiuntive */
+  .hero-origini::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -120px;
+    width: 320px;
+    height: 320px;
+    background: url("img/decorazione_spirale.svg") no-repeat center/contain;
+    opacity: 0.08;
+    z-index: 0;
+  }
+  .hero-origini::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    background: url("img/decorazione_sole.svg") no-repeat center/contain;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  .hero-origini .decor-stella {
+    position: absolute;
+    top: 22%;
+    right: 38%;
+    width: 100px;
+    animation: stellaGlow 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 12px rgba(255,200,87,1));
+    z-index: 1;
+  }
+
+  /* 🌌 Hero decorata con illustrazioni */
+.spirale-origini {
+    position: absolute;
+    top: 20%;
+    left: -80px;
+    width: 300px;
+    opacity: 0.2;
+    z-index: 0;
+    animation: spiraleMove 18s infinite ease-in-out;
+  }
+  
+  .sole-origini {
+    position: absolute;
+    top: 55%;
+    right: 30%;
+    width: 150px;
+    opacity: 0.25;
+    z-index: 0;
+    animation: soleGlow 10s infinite ease-in-out;
+  }
+  
+  .raggi-origini {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    width: 180px;
+    opacity: 0.15;
+    z-index: 0;
+    animation: raggiPulse 20s infinite ease-in-out, rotazione 60s infinite linear;
+  }
+  
+  .occhio-origini {
+    position: absolute;
+    bottom: 15%;
+    left: 12%;
+    width: 200px;
+    opacity: 0.3;
+    z-index: 0;
+    animation: fluttuazione 8s infinite ease-in-out;
+  }
+  
+  
+  /* 📝 Contenuto con più spazio */
+  .contenuto {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    padding: 120px 10% 100px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Blocco di testo */
+  .blocco {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    z-index: 2;
+  }
+  .blocco h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2rem;
+    color: #FFC857;
+    margin-bottom: 10px;
+  }
+  .blocco p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  blockquote {
+    color: #FFC857;
+    font-style: italic;
+    margin: 10px 0;
+  }
+  
+  /* Layout immagini + testo */
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  .row.reverse { flex-direction: row-reverse; }
+  
+  .testo {
+    max-width: 55%;
+    font-size: 1.05rem;
+  }
+  .img-col {
+    max-width: 38%;
+  }
+  .img-col img {
+    width: 100%;
+    max-height: 380px;          /* ✅ immagini più bilanciate */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform .3s ease;
+  }
+  .img-col img:hover { transform: scale(1.03); }
+  
+  /* ✨ Animazioni fade-up */
+  .fade-up {
+    opacity: 1;                /* ✅ visibile anche senza JS */
+    transform: translateY(0);
+    transition: all 0.8s ease;
+  }
+  
+  /* 🌟 Glow stella */
+  @keyframes stellaGlow {
+    0%,100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,200,87,0.7)); }
+    50% { transform: scale(1.3); filter: drop-shadow(0 0 25px rgba(255,200,87,1)); }
+  }
+  
+  /* 🌌 Decorazione sfondo soft */
+  .contenuto::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url("img/decorazione_spirale.svg") no-repeat center/contain;
+    opacity: 0.05;
+    top: 15%;
+    left: -150px;
+    z-index: 0;
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 900px) {
+    .row, .row.reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+    .testo, .img-col {
+      max-width: 100%;
+    }
+    .img-col img { max-height: none; }
+  }
+  
+
+/* ✅ Debug totale: tutto visibile e sopra le decorazioni */
+.fade-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  
+  .blocco, .testo, .img-col {
+    position: relative;
+    z-index: 5 !important;
+    color: white !important;
+  }
+  
+  .contenuto::before {
+    z-index: 0 !important;
+  }
+
+  /* ──────────────────────────────
+   🌌 SEZIONE SIMBOLI
+────────────────────────────── */
+
+/* ✅ Hero Simboli */
+.hero-simboli {
+    position: relative;
+    padding: 12% 10% 6%;
+    background: #0B163D;
+    color: white;
+    text-align: left;
+  }
+  .hero-simboli h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #FFC857;
+    margin-bottom: 15px;
+  }
+  .hero-simboli p {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+  .hero-simboli blockquote {
+    margin-top: 15px;
+    font-style: italic;
+    color: #FFC857;
+  }
+  
+  /* 🟡 Sezione Simboli Principali */
+  .simboli-principali {
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+  .simboli-principali h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2.3rem;
+    color: #A3B5D1;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Layout simbolo: testo + immagine */
+  .simbolo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    opacity: 1;                   /* ✅ Sempre visibile */
+    transform: none;              /* ✅ Nessuna trasformazione iniziale */
+  }
+  .simbolo-row.reverse {
+    flex-direction: row-reverse;
+  }
+  .simbolo-testo {
+    max-width: 55%;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .simbolo-testo h3 {
+    color: #FFC857;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  
+  /* ✅ Immagini simboli */
+  .simbolo-img {
+    max-width: 35%;
+    text-align: center;
+  }
+  .simbolo-img img {
+    width: 200px;                /* ✅ Più grande */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .simbolo-img img:hover {
+    transform: scale(1.08);
+  }
+  
+  /* 🌙 Sezione Simboli Collettivi vs Personali */
+  .simboli-collettivi {
+    padding: 100px 10%;
+    background: #0B163D;
+  }
+  .simboli-collettivi h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2.3rem;
+    color: #FFC857;
+    margin-bottom: 10px;
+  }
+  .simboli-collettivi blockquote {
+    color: #FFC857;
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+  .collettivi-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+  }
+  .collettivo, .personale {
+    flex: 1;
+    text-align: left;
+    opacity: 1;                   /* ✅ Sempre visibile */
+    transform: none;
+  }
+  .collettivo p, .personale p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .collettivo img, .personale img {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .collettivo img:hover, .personale img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* ✨ Fade-up (funziona solo se il JS aggiunge .visible) */
+  .simbolo-row.fade-up,
+  .collettivo.fade-up,
+  .personale.fade-up {
+    transition: all 0.8s ease;
+  }
+  .simbolo-row.fade-up:not(.visible),
+  .collettivo.fade-up:not(.visible),
+  .personale.fade-up:not(.visible) {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 900px) {
+    .simbolo-row, .simbolo-row.reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+    .simbolo-testo, .simbolo-img {
+      max-width: 100%;
+    }
+    .collettivi-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  /* ✅ Contenitore rigido per mantenere stessa altezza */
+.collettivi-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 🔹 due colonne perfette */
+    align-items: start;              /* 🔹 parte dall’alto */
+    gap: 80px;
+  }
+  
+  /* ✅ Ogni blocco avrà la stessa altezza e padding uniforme */
+  .collettivo, .personale {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;               /* 🔹 forza lo stesso punto di partenza */
+  }
+  
+  /* ✅ Testo coerente */
+  .collettivo p, .personale p {
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Immagini con margine fisso */
+  .collettivo img, .personale img {
+    width: 130px;
+    margin-top: 30px;                /* 🔹 stessa distanza dal testo */
+  }
+  
+  /* ──────────────────────────────
+   🌟 DECORAZIONI HERO SIMBOLI
+────────────────────────────── */
+.hero-simboli {
+    position: relative;
+    padding: 12% 10% 6%;
+    background: #0B163D;
+    color: white;
+    text-align: left;
+    overflow: hidden;
+  }
+  
+  /* Posizionamento simile a Home */
+  .hero-simboli .spirale-bg {
+    position: absolute;
+    width: 300px;
+    top: 5%;
+    left: -80px;
+    opacity: 0.3;
+    animation: spiraleMove 20s infinite ease-in-out;
+  }
+  
+  .hero-simboli .raggi-bg {
+    position: absolute;
+    width: 250px;
+    top: 20%;
+    right: 5%;
+    opacity: 0.4;
+    animation: raggiPulse 10s infinite ease-in-out, rotazione 40s infinite linear;
+  }
+  
+  .hero-simboli .sole-bg {
+    position: absolute;
+    width: 180px;
+    top: 10%;
+    right: 20%;
+    opacity: 0.5;
+    animation: soleGlow 10s infinite ease-in-out;
+  }
+  
+  .hero-simboli .occhio-hero {
+    position: absolute;
+    width: 160px;
+    left: 40%;
+    top: 25%;
+    z-index: 2;
+    animation: fluttuazione 6s infinite ease-in-out;
+  }
+  
+  .hero-simboli .stella-inline {
+    position: absolute;
+    width: 70px;
+    left: 55%;
+    top: 18%;
+    animation: stellaGlow 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 12px rgba(255,200,87,1));
+  }
+
+  /* ──────────────────────────────
+   🌌 SEZIONE VISIONE
+────────────────────────────── */
+
+/* ✅ Hero Visione */
+.hero-visione {
+    position: relative;
+    padding: 12% 10% 6%;
+    background: #0B163D;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-visione h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #FFC857;
+    margin-bottom: 20px;
+  }
+  
+  .hero-visione p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 10px;
+    line-height: 1.6;
+  }
+  
+  .hero-visione blockquote {
+    margin-top: 15px;
+    font-style: italic;
+    color: #B0D7FF;
+  }
+  
+  /* 👁 Occhio decorativo */
+  .occhio-visione {
+    width: 220px;
+    display: block;
+    margin: 0 auto 30px;
+    animation: fluttuazione 8s infinite ease-in-out;
+  }
+  
+  /* 📝 Testo introduttivo */
+  .intro-visione {
+    padding: 50px 10% 30px;
+    background: #0B163D;
+    color: #fff;
+    text-align: left;
+  }
+  
+  .intro-visione p {
+    max-width: 800px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+/* 🃏 Sezione Tipologie */
+.tipologie-sogno {
+    padding: 80px 10% 100px;
+    background: #0B163D;
+    text-align: left;
+  }
+  
+  .tipologie-sogno h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2.3rem;
+    color: #B0D7FF;
+    margin-bottom: 50px;
+  }
+  
+  /* ✅ Layout Cards 2x2 */
+  .cards-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+  
+  /* ✅ Card minimal senza overlay */
+  .card-vision {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    min-height: 280px;
+  }
+  
+  .card-vision:hover {
+    transform: scale(1.03);
+  }
+  
+  /* ✅ Immagine piena */
+  .card-vision img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.3s ease;
+  }
+  
+  .card-vision:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.05);
+  }
+  
+  /* 🚫 Rimosso l'overlay (niente ::after) */
+  
+  /* ✅ Titolo chiaro con box blu */
+  .card-vision span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 6px 14px;
+    background: rgba(11,22,61,0.75);
+    border-radius: 6px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+  }
+  
+/* ✅ Colori per le 4 tipologie */
+.card-vision.lucidi:hover span {
+    color: #FFC857
+  }
+  
+  .card-vision.ricorrenti:hover span {
+    color: #A3B5D1
+  }
+  
+  .card-vision.premonitori:hover span {
+    color: #F7CAC9
+  }
+  
+  .card-vision.incubi:hover span {
+    color: #F59C00
+  }
+  
+  
+  /* 📱 Mobile */
+  @media (max-width: 900px) {
+    .cards-vision {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+/* ──────────────────────────────
+   🎨 PAGINA SOGNI LUCIDI (aggiornata)
+────────────────────────────── */
+
+/* ✅ Colori principali */
+:root {
+  --giallo-lucidi: #FFC857;
+  --blu-scuro: #0B163D;
+  --bianco: #ffffff;
+}
+
+/* ✅ Sfondo generale */
+body.pagina-lucidi {
+  background: var(--giallo-lucidi);
+  color: var(--blu-scuro);
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+}
+
+/* 🌙 Navbar */
+.navbar-light {
+  background: var(--giallo-lucidi);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.navbar-light a {
+  color: var(--blu-scuro);
+  font-weight: 500;
+}
+.navbar-light a:hover {
+  color: #333;
+}
+
+/* 🎨 Hero */
+.hero-lucidi {
+  width: 100%;
+  background: var(--bianco);
+  text-align: center;
+  padding: 50px 0;
+}
+.hero-lucidi img {
+  max-width: 650px;       /* 🔥 immagine molto grande */
+  width: 80%;
+  height: auto;
+  animation: fluttuazione 6s infinite ease-in-out;
+}
+
+/* ✨ Animazione */
+@keyframes fluttuazione {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* 📝 Contenuto principale */
+.contenuto-lucidi {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 10%;
+  text-align: left;
+}
+.contenuto-lucidi h1 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 4rem;      /* 🔥 molto grande */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.contenuto-lucidi h1 span {
+  color: var(--blu-scuro);
+}
+.contenuto-lucidi blockquote {
+  font-style: italic;
+  color: #333;
+  margin: 10px 0 25px;
+  border-left: 4px solid var(--blu-scuro);
+  padding-left: 12px;
+}
+.contenuto-lucidi p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+/* 🔗 Navigazione tra tipologie */
+.nav-sogni {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 60px;
+}
+.nav-sogni a {
+  padding: 10px 18px;
+  border: 2px solid var(--blu-scuro);
+  background: var(--bianco);
+  color: var(--blu-scuro);
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.nav-sogni a:hover {
+  background: var(--blu-scuro);
+  color: var(--bianco);
+}
+
+/* 🌙 Footer */
+.footer-light {
+  background: var(--giallo-lucidi);
+  color: #333;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+.footer-light .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 10px;
+}
+.footer-light span {
+  font-weight: bold;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero-lucidi img {
+    max-width: 400px;
+    width: 90%;
+  }
+  .contenuto-lucidi {
+    padding: 0 5%;
+  }
+  .contenuto-lucidi h1 {
+    font-size: 2.8rem;
+  }
+  .nav-sogni {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* ──────────────────────────────
+   🎨 PAGINA SOGNI LUCIDI (aggiornata)
+────────────────────────────── */
+
+/* ✅ Colori principali */
+:root {
+    --giallo-lucidi: #FFC857;
+    --blu-scuro: #0B163D;
+    --bianco: #ffffff;
+  }
+  
+  /* ✅ Sfondo generale */
+  body.pagina-lucidi {
+    background: var(--giallo-lucidi);
+    color: var(--blu-scuro);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+  }
+  
+  /* 🌙 Navbar */
+  .navbar-light {
+    background: var(--giallo-lucidi);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .navbar-light a {
+    color: var(--blu-scuro);
+    font-weight: 500;
+  }
+  .navbar-light a:hover {
+    color: #0B1A3F;
+  }
+  
+  /* 🎨 Hero */
+  .hero-lucidi {
+    width: 100%;
+    background: var(--bianco);
+    text-align: center;
+    padding: 50px 0;
+  }
+  .hero-lucidi img {
+    max-width: 800px;       /* 🔥 immagine molto grande */
+    width: 80%;
+    height: auto;
+    animation: fluttuazione 6s infinite ease-in-out;
+  }
+  
+  /* ✨ Animazione */
+  @keyframes fluttuazione {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* 📝 Contenuto principale */
+  .contenuto-lucidi {
+    max-width: 900px;
+    margin: 60px 0 60px 10%;  /* 🔹 sposta tutto a sinistra */
+    padding: 0;
+    text-align: left;
+}
+
+.contenuto-lucidi h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 5rem;      /* 🔥 più grande */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--blu-scuro);
+}
+
+  .contenuto-lucidi h1 span {
+    color: var(--blu-scuro);
+  }
+  .contenuto-lucidi blockquote {
+    font-style: italic;
+    color: #333;
+    margin: 10px 0 25px;
+    border-left: 4px solid var(--blu-scuro);
+    padding-left: 12px;
+  }
+  .contenuto-lucidi p {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+  
+  /* 🔗 Navigazione tra tipologie */
+  .nav-sogni {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 60px;
+  }
+  .nav-sogni a {
+    padding: 10px 18px;
+    border: 2px solid var(--blu-scuro);
+    background: var(--bianco);
+    color: var(--blu-scuro);
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+/* 🌙 Navbar Hover - Colore Bianco */
+.navbar a:hover {
+    color: #ffffff !important;   /* 🔹 bianco puro */
+    transition: color 0.3s ease; /* 🔹 transizione morbida */
+}
+
+  
+  /* 🌙 Footer */
+  .footer-light {
+    background: var(--giallo-lucidi);
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .footer-light .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+  }
+  .footer-light span {
+    font-weight: bold;
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .hero-lucidi img {
+      max-width: 400px;
+      width: 90%;
+    }
+    .contenuto-lucidi {
+      padding: 0 5%;
+    }
+    .contenuto-lucidi h1 {
+      font-size: 2.8rem;
+    }
+    .nav-sogni {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+  /* 🔗 Navigazione Tipologie - Trasparente */
+.nav-sogni {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 50px;
+    padding-left: 10%;
+}
+
+.nav-sogni a {
+    position: relative;
+    padding: 12px 20px;
+    border: 2px solid var(--blu-scuro);
+    background: var(--bianco);
+    color: var(--blu-scuro);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+/* 🎨 Effetto Hover Traslucido */
+.nav-sogni a:hover {
+    background: #0B1A3F;
+    transform: scale(1.04);
+}
+
+.icone-interattive {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 10%;
+  background: #0B163D; /* Blu scuro */
+}
+
+.icona-blocco {
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+/* ✅ Cerchi bianchi */
+.icona {
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 Effetto hover */
+.icona:hover {
+  transform: scale(1.08);
+}
+
+/* ✅ Icone SVG centrate */
+.icona img {
+  max-width: 65px;
+  max-height: 65px;
+  display: block;
+  margin: auto;
+}
+
+/* 🔹 Regolazioni singole (se servono correzioni di centratura) */
+.icona-luna    { transform: translateY(3px); }
+.icona-specchio{ transform: translateY(5px); }
+.icona-porta   { transform: translateY(4px); }
+
+/* ✅ Titoli */
+.icona-blocco h3 {
+  font-size: 1rem;
+  color: #FFC857;
+  margin-bottom: 8px;
+}
+
+/* ✅ Descrizione con animazione */
+.descrizione {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #B0D7FF;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* 🔥 Mostra testo al passaggio */
+.icona-blocco:hover .descrizione {
+  opacity: 1;
+  max-height: 150px;
+}
+
+/* Allinea Lucidi al layout delle altre pagine */
+body.pagina-lucidi .contenuto-lucidi {
+    /* prima era margin: 60px 0 60px 10%; */
+    margin: 60px 0 60px 5%;
+  }
+  
+  body.pagina-lucidi .nav-sogni {
+    /* prima era padding-left: 10%; */
+    padding-left: 5%;
+    justify-content: flex-start;
+  }
+  
+  /* Mobile: mantieni lo stesso gutter */
+  @media (max-width: 900px) {
+    body.pagina-lucidi .contenuto-lucidi { margin: 40px 0 40px 5%; }
+    body.pagina-lucidi .nav-sogni { padding-left: 5%; }
+  }
+  
+
+/* ──────────────────────────────
+   PAGINA SOGNI RICORRENTI
+────────────────────────────── */
+
+/* Colori specifici */
+:root {
+    --azzurro-ricorrenti: #A3B5D1;
+    --blu-scuro:        #0B163D; /* riuso da Lucidi */
+    --bianco:           #ffffff;
+  }
+  
+  /* Body e sfondo */
+  body.pagina-ricorrenti {
+    background: var(--azzurro-ricorrenti);
+    color: var(--blu-scuro);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+  }
+  
+  /* Navbar “azzurra” per ricorrenti */
+  .navbar-ricorrenti {
+    background: var(--azzurro-ricorrenti);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .navbar-ricorrenti a {
+    color: var(--blu-scuro);
+    font-weight: 500;
+  }
+  .navbar-ricorrenti a:hover {
+    color: var(--bianco);
+  }
+  
+  /* Hero ricorrenti (bianco come Lucidi) */
+  .hero-ricorrenti {
+    background: var(--bianco);
+    text-align: center;
+    padding: 50px 0;
+  }
+  .hero-ricorrenti img {
+    max-width: 650px;
+    width: 80%;
+    height: auto;
+    animation: fluttuazione 6s infinite ease-in-out;
+  }
+  
+  /* Contenuto ricorrenti */
+  .contenuto-ricorrenti {
+    max-width: 900px;
+    margin: 60px 5% 0 5%;   
+    padding: 0;             
+    text-align: left;
+  }
+  .contenuto-ricorrenti h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--blu-scuro);
+  }
+  .contenuto-ricorrenti blockquote {
+    font-style: italic;
+    color: var(--blu-scuro);
+    margin: 10px 0 25px;
+    border-left: 4px solid var(--blu-scuro);
+    padding-left: 12px;
+  }
+  .contenuto-ricorrenti p {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+    color: var(--blu-scuro);
+  }
+  
+  /* Ritaglio margine identico a Lucidi/nav-sogni */
+  .nav-sogni {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 50px 0;
+    padding-left: 5%;
+  }
+  .nav-sogni a {
+    padding: 12px 20px;
+    border: 2px solid var(--blu-scuro);
+    background: var(--bianco);
+    color: var(--blu-scuro);
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .nav-sogni a:hover {
+    background: rgba(11,22,61,0.1);
+    transform: scale(1.04);
+  }
+  
+  /* Footer azzurro per ricorrenti */
+  .footer-ricorrenti {
+    background: var(--azzurro-ricorrenti);
+    color: var(--blu-scuro);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .footer-ricorrenti .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+  }
+  .footer-ricorrenti span {
+    font-weight: bold;
+  }
+  
+  /* Responsive (come Lucidi) */
+  @media (max-width: 768px) {
+    .hero-ricorrenti img {
+      max-width: 400px;
+      width: 90%;
+    }
+    .contenuto-ricorrenti {
+      padding: 0 5%;
+    }
+    .contenuto-ricorrenti h1 {
+      font-size: 2.8rem;
+    }
+    .nav-sogni {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-left: 5%;
+    }
+  }
+
+  /* ──────────────────────────────
+   🌟 Sezione Flip-Cards – Ricorrenti
+────────────────────────────── */
+.ricorrenti-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 40px;
+    padding: 60px 10%;
+    background: var(--azzurro-ricorrenti);
+  }
+  
+  .card {
+    perspective: 800px;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* per mantenere il quadrato */
+    transform-style: preserve-3d;
+    transition: transform .6s ease;
+  }
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* FRONT & BACK */
+  .card-front, .card-back {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card-front {
+    background: white;
+  }
+  .card-front img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+  }
+  .card-front h3 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.1rem;
+    color: var(--blu-scuro);
+  }
+  
+  .card-back {
+    background: var(--bianco);
+    transform: rotateY(180deg);
+  }
+  .card-back p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--blu-scuro);
+    text-align: center;
+  }
+
+  /* dentro il tuo blocco flip-cards */
+.card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;           /* spazio di respiro */
+  }
+  
+  .card-front img,
+  .card-front svg {
+    width: 70%;
+    height: 70%;
+    max-width: 90px;         /* opzionale */
+    max-height: 90px;        /* opzionale */
+    object-fit: contain;     /* IMPORTANTISSIMO */
+  }
+
+  .card-back {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;  /* testo centrato verticalmente */
+  }  
+
+/* ──────────────────────────────
+   PAGINA SOGNI PREMONITORI
+────────────────────────────── */
+
+/* Colori specifici */
+:root {
+    --rosa-premonitori: #F7CAC9;
+    --blu-scuro:       #0B163D;
+    --bianco:          #ffffff;
+  }
+  
+  /* Body e sfondo */
+  body.pagina-premonitori {
+    background: var(--rosa-premonitori);
+    color: var(--blu-scuro);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+  }
+  
+  /* Navbar “rosa” per premonitori */
+  .navbar-premonitori {
+    background: var(--rosa-premonitori);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .navbar-premonitori .logo span,
+  .navbar-premonitori a {
+    color: var(--blu-scuro);
+    font-weight: 500;
+  }
+  .navbar-premonitori a:hover {
+    color: var(--bianco);
+  }
+  
+  /* Hero premonitori (sfondo bianco) */
+  .hero-premonitori {
+    background: var(--bianco);
+    text-align: center;
+    padding: 50px 0;
+  }
+  .hero-premonitori img {
+    max-width: 650px;
+    width: 80%;
+    height: auto;
+    animation: fluttuazione 6s infinite ease-in-out;
+  }
+  
+  /* Contenuto premonitori */
+  .contenuto-premonitori {
+    max-width: 900px;
+    /* prima: margin: 60px auto; padding: 0 5%; */
+    margin: 60px 5% 0 5%;   /* margine top 60px, destra 5%, bottom 0, sinistra 5% */
+    padding: 0;             /* niente padding interno extra */
+    text-align: left;
+  }
+  .contenuto-premonitori h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--blu-scuro);
+  }
+  .contenuto-premonitori blockquote {
+    font-style: italic;
+    color: var(--blu-scuro);
+    margin: 10px 0 25px;
+    border-left: 4px solid var(--blu-scuro);
+    padding-left: 12px;
+  }
+  .contenuto-premonitori p {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+    color: var(--blu-scuro);
+  }
+  
+  /* Navigazione marginata a sinistra */
+  .nav-sogni {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 50px 0;
+    padding-left: 5%;
+  }
+  .nav-sogni a {
+    padding: 12px 20px;
+    border: 2px solid var(--blu-scuro);
+    background: var(--bianco);
+    color: var(--blu-scuro);
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .nav-sogni a:hover {
+    background: rgba(11,22,61,0.1);
+    transform: scale(1.04);
+  }
+  
+  /* Footer rosa per premonitori */
+  .footer-premonitori {
+    background: var(--rosa-premonitori);
+    color: var(--blu-scuro);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .footer-premonitori .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+  }
+  .footer-premonitori span {
+    font-weight: bold;
+  }
+  
+  /* Responsive (come Lucidi) */
+  @media (max-width: 768px) {
+    .hero-premonitori img {
+      max-width: 400px;
+      width: 90%;
+    }
+    .contenuto-premonitori {
+      padding: 0 5%;
+    }
+    .contenuto-premonitori h1 {
+      font-size: 2.8rem;
+    }
+    .nav-sogni {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-left: 5%;
+    }
+  }
+  /* ───────── Premonitori Lab ───────── */
+.lab-premonitori{
+    background:#fff;
+    color:#0B163D;
+    margin:60px 0;
+    padding:40px 10%;
+    border-radius:16px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+  }
+  .lab-premonitori h2{
+    font-family:'Helvetica',sans-serif;
+    font-size:2.2rem;
+    margin-bottom:10px;
+    color:#0B163D;
+  }
+  .lab-intro{ margin-bottom:24px; max-width:750px; }
+  
+  .lab-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(260px,1fr));
+    gap:18px 28px;
+    margin-bottom:24px;
+  }
+  .lab-item{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    align-items:flex-start;
+    gap:10px 12px;
+    background:#F9EDEF;          /* rosa chiarissimo coerente con #F7CAC9 */
+    border:1px solid rgba(11,22,61,.08);
+    border-radius:12px;
+    padding:12px 14px;
+  }
+  .lab-item input{ display:none; }
+  .check{
+    width:22px;height:22px;border-radius:6px;
+    border:2px solid #0B163D; display:inline-block; margin-top:2px;
+    position:relative; transition:all .2s ease;
+  }
+  .lab-item input:checked + .check{
+    background:#0B163D; border-color:#0B163D;
+  }
+  .lab-item input:checked + .check::after{
+    content:""; position:absolute; inset:4px;
+    background:linear-gradient(135deg,#FFC857, #FFD98A); border-radius:3px;
+  }
+  .lab-item strong{ line-height:1.25; }
+  .lab-item small{ color:#344; opacity:.85; display:block; margin-top:4px; }
+  
+  .lab-meter{
+    position:relative; background:rgba(11,22,61,.12);
+    border-radius:12px; height:16px; overflow:hidden; margin:16px 0 10px;
+  }
+  .lab-bar{
+    height:100%; width:0%; background:#0B163D; transition:width .35s ease;
+  }
+  .lab-label{ font-size:.95rem; opacity:.85; }
+  
+  .lab-nota{ margin-top:14px; }
+  .lab-nota summary{ cursor:pointer; color:#0B163D; font-weight:700; }
+  .lab-nota p{ margin-top:8px; max-width:780px; }
+  
+  .lab-fonti{ margin-top:22px; }
+  .lab-fonti h3{ font-size:1.1rem; margin-bottom:6px; }
+  .lab-fonti li{ margin-left:18px; list-style:disc; }
+  
+  /* Stato colore dinamico per la barra */
+  .lab-premonitori[data-level="basso"] .lab-bar{ background:#8AA5C9; }   /* blu chiaro */
+  .lab-premonitori[data-level="medio"] .lab-bar{ background:#FFC857; }   /* giallo caldo */
+  .lab-premonitori[data-level="alto"]  .lab-bar{ background:#3FB37F; }   /* verde */
+  
+  @media (max-width:900px){
+    .lab-grid{ grid-template-columns:1fr; }
+    .lab-premonitori{ padding:32px 6%; }
+  }
+/* ── Fix allineamento "Annotato / Evento / Dettagli / Latenza" ── */
+.lab-item{
+    /* rimpiazziamo il layout */
+    display: grid;
+    grid-template-columns: 22px 1fr;          /* col 1 = checkbox, col 2 = testo */
+    grid-template-rows: auto auto;            /* riga 1 = titolo, riga 2 = descrizione */
+    grid-template-areas:
+      "check title"
+      "check desc";
+    align-items: start;
+    gap: 10px 12px;
+    text-align: left;                          /* niente allineamento a dx mai */
+  }
+  
+  .lab-item .check{ grid-area: check; margin-top: 2px; }
+  .lab-item strong{ grid-area: title; margin: 0 0 2px 0; display:block; }
+  .lab-item small{  grid-area: desc;  margin: 0; display:block; }
+  
+  /* giusto per sicurezza, forziamo l'allineamento del testo a sx */
+  .lab-item strong,
+  .lab-item small { text-align: left; }
+    
+
+  /* ──────────────────────────────
+   PAGINA INCUBI
+────────────────────────────── */
+
+/* Colori specifici */
+:root {
+    --grigio-incubi: #4E4C5A;
+    --blu-scuro:       #0B163D;
+    --bianco:          #ffffff;
+  }
+  
+  /* Body e sfondo */
+  body.pagina-incubi {
+    background: var(--grigio-incubi);
+    color: var(--bianco);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+  }
+  
+  /* Navbar “grigia” per incubi */
+  .navbar-incubi {
+    background: var(--grigio-incubi);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .navbar-incubi .logo span,
+  .navbar-incubi a {
+    color: var(--blu-scuro);
+    font-weight: 500;
+  }
+  .navbar-incubi a:hover {
+    color: var(--bianco);
+  }
+  
+  .hero-incubi {
+    background: var(--bianco);
+    text-align: center;
+    padding: 50px 0;
+  }
+  .hero-incubi img {
+    max-width: 650px;
+    width: 80%;
+    height: auto;
+    animation: fluttuazione 6s infinite ease-in-out;
+  }
+  
+  .contenuto-incubi {
+    max-width: 900px;
+    margin: 60px 5% 0 5%;   
+    padding: 0;             
+    text-align: left;
+  }
+  .contenuto-incubi h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--bianco);
+  }
+  .contenuto-incubi blockquote {
+    font-style: italic;
+    color: var(--bianco);
+    margin: 10px 0 25px;
+    border-left: 4px solid var(--bianco);
+    padding-left: 12px;
+  }
+  .contenuto-incubi p {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+    color: var(--bianco);
+  }
+  
+  .nav-sogni {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 50px 0;
+    padding-left: 5%;
+  }
+  .nav-sogni a {
+    padding: 12px 20px;
+    border: 2px solid var(--blu-scuro);
+    background: var(--bianco);
+    color: var(--blu-scuro);
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .nav-sogni a:hover {
+    background: rgba(11,22,61,0.1);
+    transform: scale(1.04);
+  }
+  
+  .footer-incubi {
+    background: var(--grigio-incubi);
+    color: var(--bianco);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .footer-incubi .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+  }
+  .footer-incubi span {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-incubi img {
+      max-width: 400px;
+      width: 90%;
+    }
+    .contenuto-incubi{
+      padding: 0 5%;
+    }
+    .contenuto-incubi h1 {
+      font-size: 2.8rem;
+    }
+    .nav-sogni {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-left: 5%;
+    }
+  }
+  /* ───── Toolkit Incubi (interattivo) ───── */
+.toolkit-incubi{
+    padding: 80px 5% 40px;
+    background: var(--grigio-incubi);
+    color: var(--bianco);
+  }
+  .toolkit-incubi h2{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 22px;
+  }
+  .tools{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  .tool{
+    background: #ffffff;
+    color: var(--blu-scuro);
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  }
+  .tool h3{ margin: 0 0 10px; }
+  
+  .fear-meter input[type="range"]{ width: 100%; }
+  .fear-label{ margin-top: 8px; }
+  
+  .breathe .circle{
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    margin: 12px auto;
+    background: rgba(78,76,90,.15);
+    border: 2px solid var(--grigio-incubi);
+  }
+  .breathe button,
+  .rescript button{
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 2px solid var(--blu-scuro);
+    background: var(--bianco);
+    color: var(--blu-scuro);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .breathe button:hover,
+  .rescript button:hover{
+    background: rgba(11,22,61,.08);
+  }
+  
+  .rescript textarea{
+    width: 100%;
+    min-height: 130px;
+    resize: vertical;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.15);
+    margin-bottom: 10px;
+    font-family: inherit;
+    color: var(--blu-scuro);
+  }
+  
+  
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+

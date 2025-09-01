@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incubi - Dentro il Sogno</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="pagina-incubi">
+
+  <!-- 🌙 Navbar -->
+  <header class="navbar navbar-incubi">
+    <div class="logo">
+      <img src="immagini e illustrazioni/MARCHIO_dentro_il_sogno.svg" alt="Logo"/>
+      <span>DENTRO IL SOGNO</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="origini.html">Origini</a></li>
+        <li><a href="simboli.html">Simboli</a></li>
+        <li><a href="visione.html">Visione</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🎨 Hero (bianco) -->
+  <section class="hero-incubi">
+    <img src="immagini e illustrazioni/incubi.jpg" alt="Illustrazione sogni premonitori"/>
+  </section>
+
+  <!-- 📝 Contenuto -->
+  <section class="contenuto-incubi">
+    <h1>Incubi</h1>
+    <blockquote>“Il buio ha una voce. E ogni notte la sento.”</blockquote>
+    <p>
+        Gli incubi sono sogni fortemente disturbanti che 
+        lasciano sensazioni di paura, ansia o panico. Non sono 
+        solo “brutti sogni”, ma messaggi importanti del nostro 
+        inconscio. Possono derivare da esperienze traumatiche, 
+        da stati di stress o da ansie represse. Analizzarli con 
+        attenzione aiuta a comprendere cosa ci spaventa davvero 
+        e, talvolta, a guarire.
+    </p>
+  </section>
+  <section class="toolkit-incubi">
+    <h2>Toolkit per gli Incubi</h2>
+  
+    <div class="tools">
+      <!-- Scala Paura -->
+      <div class="tool card fear-meter">
+        <h3>Scala della paura</h3>
+        <input id="fearRange" type="range" min="0" max="10" value="3" />
+        <div class="fear-label"><strong><span id="fearValue">3</span>/10</strong></div>
+        <small>Segna quanto ti spaventava l’incubo. Rimisura dopo gli esercizi.</small>
+      </div>
+  
+      <!-- Respiro 4-7-8 -->
+      <div class="tool card breathe">
+        <h3>Respiro 4-7-8</h3>
+        <button id="startBreath">Avvia 1 ciclo</button>
+        <div class="circle" id="breathCircle"></div>
+        <p id="breathCue">Pronto?</p>
+        <small>4 inspira • 7 trattieni • 8 espira</small>
+      </div>
+  
+      <!-- IRT: Rescrivi il sogno -->
+      <div class="tool card rescript">
+        <h3>Rescrivi il sogno</h3>
+        <textarea id="rescriptText" placeholder="Trasforma il finale in uno più sicuro/realistico..."></textarea>
+        <button id="saveRescript">Salva</button>
+        <small>Approccio ispirato alla <em>Imagery Rehearsal Therapy</em> (IRT).</small>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- 🔗 Navigazione tra le tipologie -->
+  <div class="nav-sogni">
+    <a href="lucidi.html">Sogni Lucidi</a>
+    <a href="ricorrenti.html">Sogni Ricorrenti</a>
+    <a href="premonitori.html">Sogni Premonitori</a>
+  </div>
+
+  <!-- 🌙 Footer -->
+  <footer class="footer footer-incubi">
+    <p class="copyright">COPYRIGHT © DENTRO IL SOGNO</p>
+    <div class="footer-links">
+      <span>Quick Links</span>
+      <span>Contacts</span>
+      <span>Info</span>
+    </div>
+  </footer>
+
+</body>
+</html>

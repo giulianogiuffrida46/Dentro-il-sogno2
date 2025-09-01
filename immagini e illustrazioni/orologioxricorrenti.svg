@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154.28 154.28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0b1a3f;
+      }
+
+      .cls-2 {
+        fill: #a3b5d1;
+        stroke: #0b1a3f;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="77.14" cy="77.14" r="72.14"/>
+  <g id="clock">
+    <rect class="cls-1" x="67.09" y="37.63" width="11.88" height="47.52"/>
+    <rect class="cls-1" x="67.1" y="79.21" width="47.52" height="11.88"/>
+  </g>
+</svg>
